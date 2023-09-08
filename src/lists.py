@@ -3,6 +3,7 @@ import sys
 # This reads all of stdin and converts it into a list of integers.
 # This *only* works if there are no non-integers in the input.
 # You can learn how to deal with errors later...
+
 x = [int(a) for a in sys.stdin.read().split()]
 
 # if you have a list of integers you want to write to stdout in the same
@@ -42,19 +43,26 @@ if len(sys.argv) < 2:
 match sys.argv[1]:
     case "mean":
         # put your solution to the first exercise here
-        mean = "mean of x"
+        mean = sum(x)/len(x)
         print(mean)
 
     case "times":
         # Put your solution to the second exercise here
         times_three = []
+        for i in x:
+            times_three.append(i*3)
         print_list(times_three)
 
     case "even":
         # Put your solution to the third exercise here
         even = []
+        for i in x:
+            if i % 2 == 0:
+                even.append(i)
         print_list(even)
 
     case _:
         print(f"Incorrect command {sys.argv[1]}.", file=sys.stderr)
         sys.exit(1)
+
+# At$$dE9 -> At7917dE9, prints False
