@@ -7,6 +7,7 @@ while i <= n:
   stop = input("Do you want to stop?")
   if stop == "yes":
     print(f"Stopped after {i}/{n} iterations.")
+    break
   i += 1
 else:
   print(f"All {n}/{n} iterations finished!")
