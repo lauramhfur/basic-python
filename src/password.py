@@ -14,7 +14,7 @@ if (
     re.search("[a-z]", password)
     and re.search("[A-Z]", password)
     and re.search("[0-9]", password)
-    and re.search("[\W]", password) # non-alphanumeric character
+    and re.search("[^a-zA-Z0-9]", password) # non-alphanumeric character
     and 6 <= len(password) <= 16
 ):
     is_valid = True
