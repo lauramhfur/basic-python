@@ -1,13 +1,17 @@
 # You should write a loop around this question, and keep asking until
 # the answer is "yes" (lower case).
-n = 10
-i = 1
-while i <= n:
-  print("Hello, World!")
-  stop = input("Do you want to stop?")
-  if stop == "yes":
-    print(f"Stopped after {i}/{n} iterations.")
-    break
-  i += 1
-else:
-  print(f"All {n}/{n} iterations finished!")
+answer = "no"
+
+while answer == "no":
+    print("Hello, World!")
+    
+    while True:
+        stop = input("Do you want to stop?: ").lower()
+        
+        if stop in ["yes", "no"]:
+            answer = stop
+            if answer == "yes":
+                print("Stopped.")
+            break
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
